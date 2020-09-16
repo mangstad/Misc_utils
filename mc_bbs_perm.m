@@ -149,7 +149,7 @@ end
 
 P = size(pheno,2);
 
-parfor iPerm = 1:NumPerms
+for iPerm = 1:NumPerms
     fprintf(1,'%d of %d\n',iPerm,NumPerms);
     pheno_predict_perm = zeros(n,size(pheno,2));
     pheno_residualized_perm = zeros(n,size(pheno,2));
@@ -188,6 +188,9 @@ parfor iPerm = 1:NumPerms
     end
     
     tmp = zeros(P,nFold);
+    if (LOSOPheno)
+        tmp = zeros(1,nFold);
+    end
     for iFold = 1:nFold
         test_idx = folds==iFold & good;    
         if (LOSOPheno)
