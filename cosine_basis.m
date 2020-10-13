@@ -7,7 +7,7 @@ function cdrift = cosine_basis(high,low, frametimes)
     nfct = sqrt(2/len_tim);
     
     order = max(floor(2*len_tim*nyq*dt),1);
-    cdrift = zeros(len_time,order);
+    cdrift = zeros(len_tim,order);
 
     for k = 1:(order-1)
         cdrift(:,k) = nfct*cos((pi/len_tim)*(n_times+0.5)*k);
