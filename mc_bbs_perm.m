@@ -10,6 +10,7 @@ p = inputParser;
 addParameter(p,'Scores',[]);
 addParameter(p,'Components',[]);
 addParameter(p,'LOSOPheno',0);
+addParameter(p,'Perms',[]);
 parse(p,varargin{:});
 
 good = ~any(isnan(pheno),2) & ~any(isnan(nuisance),2);
@@ -131,12 +132,18 @@ results.ci_corr = ci_corr;
 
 
 shuf_idx = zeros(n,NumPerms);
-for iPerm = 1:NumPerms
-    %shuffle subjects within site
-    for iFold = 1:nFold
-        currsite = find(folds==iFold);
-        shuf_idx(currsite,iPerm) = randsample(currsite,numel(currsite));
+if (isempty(p.Results.Perms)) %just generate within-fold permutations
+    for iPerm = 1:NumPerms
+        %shuffle subjects within site
+        for iFold = 1:nFold
+            currsite = find(folds==iFold);
+            shuf_idx(currsite,iPerm) = randsample(currsite,numel(currsite));
+        end
     end
+else 
+    %use provied permutation matrix
+    shuf_idx = p.Results.Perms;
+    
 end
 
 %check correlation between actual and predicted phenotypes
@@ -149,7 +156,7 @@ end
 
 P = size(pheno,2);
 
-for iPerm = 1:NumPerms
+parfor iPerm = 1:NumPerms
     fprintf(1,'%d of %d\n',iPerm,NumPerms);
     pheno_predict_perm = zeros(n,size(pheno,2));
     pheno_residualized_perm = zeros(n,size(pheno,2));
