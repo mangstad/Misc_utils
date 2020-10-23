@@ -11,6 +11,7 @@ addParameter(p,'Scores',[]);
 addParameter(p,'Components',[]);
 addParameter(p,'LOSOPheno',0);
 addParameter(p,'Perms',[]);
+addParameter(p,'Tolerance',eps);
 parse(p,varargin{:});
 
 good = ~any(isnan(pheno),2) & ~any(isnan(nuisance),2);
@@ -215,4 +216,4 @@ results.fold_corr_perm = fold_corr_perm;
 results.mean_corr_perm = mean_corr_perm;
 
 %calculate perm p values
-results.perm_p = (1+sum(bsxfun(@gt,results.mean_corr_perm,results.mean_corr),2))./NumPerms;
+results.perm_p = (sum(bsxfun(@ge,results.mean_corr_perm,results.mean_corr-p.Results.Tolerance),2))./NumPerms;
