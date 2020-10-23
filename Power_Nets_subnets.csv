@@ -1,0 +1,265 @@
+ROI,X,Y,Z,Network,NetworkColor,NetworkName,R,G,B,Laterality,SubnetworkName,Subnetwork,SubnetworkBriefName,SubnetworkLat
+1,-25,-98,-12,-1,White,Uncertain,255,255,255,L,Occipital_Pole,6,LING,10
+2,27,-97,-13,-1,White,Uncertain,255,255,255,R,Occipital_Pole,6,LING,9
+3,24,32,-18,-1,White,Uncertain,255,255,255,R,Frontal_Orbital_Cortex,1,OFC,11
+4,-56,-45,-24,-1,White,Uncertain,255,255,255,L,Inferior_Temporal_Gyrus_temporooccipital_part,4,pITG,14
+5,8,41,-24,-1,White,Uncertain,255,255,255,R,Frontal_Pole,2,OFC,11
+6,-21,-22,-20,-1,White,Uncertain,255,255,255,L,Parahippocampal_Gyrus_posterior_division,9,pPHG,18
+7,17,-28,-17,-1,White,Uncertain,255,255,255,R,Parahippocampal_Gyrus_posterior_division,9,pPHG,17
+8,-37,-29,-26,-1,White,Uncertain,255,255,255,L,Temporal_Fusiform_Cortex_posterior_division,8,FUS,8
+9,65,-24,-19,-1,White,Uncertain,255,255,255,R,Middle_Temporal_Gyrus_posterior_division,5,pMTG,15
+10,52,-34,-27,-1,White,Uncertain,255,255,255,R,Inferior_Temporal_Gyrus_posterior_division,4,pITG,13
+11,55,-31,-17,-1,White,Uncertain,255,255,255,R,Inferior_Temporal_Gyrus_posterior_division,4,pITG,13
+12,34,38,-12,-1,White,Uncertain,255,255,255,R,Frontal_Pole,2,OFC,11
+13,-7,-52,61,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Precuneous_Cortex,4,PCN,6
+14,-14,-18,40,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Cingulate_Gyrus_posterior_division,1,PCC,4
+15,0,-15,47,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Supplementary_Motor_Cortex,6,SMA,11
+16,10,-2,45,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Supplementary_Motor_Cortex,6,SMA,11
+17,-7,-21,65,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Precentral_Gyrus,3,PRE,10
+18,-7,-33,72,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Postcentral_Gyrus,2,POST,8
+19,13,-33,75,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+20,-54,-23,43,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Supramarginal_Gyrus_anterior_division,7,aSMG,2
+21,29,-17,71,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+22,10,-46,73,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+23,-23,-30,72,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Postcentral_Gyrus,2,POST,8
+24,-40,-19,54,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Precentral_Gyrus,3,PRE,10
+25,29,-39,59,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+26,50,-20,42,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+27,-38,-27,69,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Postcentral_Gyrus,2,POST,8
+28,20,-29,60,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+29,44,-8,57,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+30,-29,-43,61,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Superior_Parietal_Lobule,5,SPL,14
+31,10,-17,74,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+32,22,-42,69,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+33,-45,-32,47,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Supramarginal_Gyrus_anterior_division,7,aSMG,2
+34,-21,-31,61,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Postcentral_Gyrus,2,POST,8
+35,-13,-17,75,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Precentral_Gyrus,3,PRE,10
+36,42,-20,55,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+37,-38,-15,69,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Precentral_Gyrus,3,PRE,10
+38,-16,-46,73,1,Cyan,"Sensory/somatomotor Hand",0,255,255,L,Postcentral_Gyrus,2,POST,8
+39,2,-28,60,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+40,3,-17,58,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+41,38,-17,45,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Precentral_Gyrus,3,PRE,9
+42,-49,-11,35,2,Orange,"Sensory/somatomotor Mouth",255,128,0,L,Postcentral_Gyrus,2,POST,4
+43,36,-9,14,2,Orange,"Sensory/somatomotor Mouth",255,128,0,R,Insular_Cortex,1,INS,1
+44,51,-6,32,2,Orange,"Sensory/somatomotor Mouth",255,128,0,R,Precentral_Gyrus,3,PRE,5
+45,-53,-10,24,2,Orange,"Sensory/somatomotor Mouth",255,128,0,L,Postcentral_Gyrus,2,POST,4
+46,66,-8,25,2,Orange,"Sensory/somatomotor Mouth",255,128,0,R,Postcentral_Gyrus,2,POST,3
+47,-3,2,53,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Supplementary_Motor_Cortex,5,SMA,12
+48,54,-28,34,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Supramarginal_Gyrus_anterior_division,6,aSMG,3
+49,19,-8,64,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Superior_Frontal_Gyrus,4,SFG,9
+50,-16,-5,71,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Superior_Frontal_Gyrus,4,SFG,10
+51,-10,-2,42,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Cingulate_Gyrus_anterior_division,2,ACC,2
+52,37,1,-4,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Insular_Cortex,3,INS,7
+53,13,-1,70,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Superior_Frontal_Gyrus,4,SFG,9
+54,7,8,51,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Supplementary_Motor_Cortex,5,SMA,11
+55,-45,0,9,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Central_Opercular_Cortex,1,COC,6
+56,49,8,-1,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Central_Opercular_Cortex,1,COC,5
+57,-34,3,4,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Insular_Cortex,3,INS,8
+58,-51,8,-2,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Temporal_Pole,7,TP,14
+59,-5,18,34,3,Purple,"Cingulo-opercular Task Control",128,0,128,L,Cingulate_Gyrus_anterior_division,2,ACC,2
+60,36,10,1,3,Purple,"Cingulo-opercular Task Control",128,0,128,R,Insular_Cortex,3,INS,7
+61,32,-26,13,4,Pink,Auditory,255,0,255,R,Insular_Cortex,2,INS,3
+62,65,-33,20,4,Pink,Auditory,255,0,255,R,Parietal_Operculum_Cortex,3,POC,7
+63,58,-16,7,4,Pink,Auditory,255,0,255,R,Planum_Temporale,4,STG,11
+64,-38,-33,17,4,Pink,Auditory,255,0,255,L,Planum_Temporale,4,STG,12
+65,-60,-25,14,4,Pink,Auditory,255,0,255,L,Planum_Temporale,4,STG,12
+66,-49,-26,5,4,Pink,Auditory,255,0,255,L,Superior_Temporal_Gyrus_posterior_division,4,STG,12
+67,43,-23,20,4,Pink,Auditory,255,0,255,R,Parietal_Operculum_Cortex,3,POC,7
+68,-50,-34,26,4,Pink,Auditory,255,0,255,L,Parietal_Operculum_Cortex,3,POC,8
+69,-53,-22,23,4,Pink,Auditory,255,0,255,L,Parietal_Operculum_Cortex,3,POC,8
+70,-55,-9,12,4,Pink,Auditory,255,0,255,L,Central_Opercular_Cortex,1,COC,2
+71,56,-5,13,4,Pink,Auditory,255,0,255,R,Precentral_Gyrus,5,POST,9
+72,59,-17,29,4,Pink,Auditory,255,0,255,R,Postcentral_Gyrus,5,POST,9
+73,-30,-27,12,4,Pink,Auditory,255,0,255,L,no_label,0,NA,5
+74,-41,-75,26,5,Red,"Default mode",255,0,0,L,Lateral_Occipital_Cortex_superior_division,8,LOC,10
+75,6,67,-4,5,Red,"Default mode",255,0,0,R,Frontal_Pole,4,mFC,11
+76,8,48,-15,5,Red,"Default mode",255,0,0,R,Frontal_Medial_Cortex,4,mFC,11
+77,-13,-40,1,5,Red,"Default mode",255,0,0,L,Hippocampus,7,HPC,8
+78,-18,63,-9,5,Red,"Default mode",255,0,0,L,Frontal_Pole,6,SFG,30
+79,-46,-61,21,5,Red,"Default mode",255,0,0,L,Lateral_Occipital_Cortex_superior_division,8,LOC,10
+80,43,-72,28,5,Red,"Default mode",255,0,0,R,Lateral_Occipital_Cortex_superior_division,1,ANG,3
+81,-44,12,-34,5,Red,"Default mode",255,0,0,L,Temporal_Pole,15,TP,32
+82,46,16,-30,5,Red,"Default mode",255,0,0,R,Temporal_Pole,15,TP,31
+83,-68,-23,-16,5,Red,"Default mode",255,0,0,L,Middle_Temporal_Gyrus_posterior_division,11,MTG,16
+84,-58,-26,-15,-1,White,Uncertain,255,255,255,L,Middle_Temporal_Gyrus_posterior_division,5,pMTG,16
+85,27,16,-17,-1,White,Uncertain,255,255,255,R,Frontal_Orbital_Cortex,1,OFC,11
+86,-44,-65,35,5,Red,"Default mode",255,0,0,L,Lateral_Occipital_Cortex_superior_division,1,ANG,4
+87,-39,-75,44,5,Red,"Default mode",255,0,0,L,Lateral_Occipital_Cortex_superior_division,1,ANG,4
+88,-7,-55,27,5,Red,"Default mode",255,0,0,L,Precuneous_Cortex,13,PCN,26
+89,6,-59,35,5,Red,"Default mode",255,0,0,R,Precuneous_Cortex,13,PCN,25
+90,-11,-56,16,5,Red,"Default mode",255,0,0,L,Precuneous_Cortex,13,PCN,26
+91,-3,-49,13,5,Red,"Default mode",255,0,0,L,Cingulate_Gyrus_posterior_division,3,PCC,22
+92,8,-48,31,5,Red,"Default mode",255,0,0,R,Cingulate_Gyrus_posterior_division,3,PCC,21
+93,15,-63,26,5,Red,"Default mode",255,0,0,R,Precuneous_Cortex,13,PCN,25
+94,-2,-37,44,5,Red,"Default mode",255,0,0,L,Cingulate_Gyrus_posterior_division,3,PCC,22
+95,11,-54,17,5,Red,"Default mode",255,0,0,R,Precuneous_Cortex,13,PCN,25
+96,52,-59,36,5,Red,"Default mode",255,0,0,R,Lateral_Occipital_Cortex_superior_division,1,ANG,3
+97,23,33,48,5,Red,"Default mode",255,0,0,R,Superior_Frontal_Gyrus,6,SFG,29
+98,-10,39,52,5,Red,"Default mode",255,0,0,L,Frontal_Pole,6,SFG,30
+99,-16,29,53,5,Red,"Default mode",255,0,0,L,Superior_Frontal_Gyrus,6,SFG,30
+100,-35,20,51,5,Red,"Default mode",255,0,0,L,Middle_Frontal_Gyrus,10,MFG,14
+101,22,39,39,5,Red,"Default mode",255,0,0,R,Frontal_Pole,6,SFG,29
+102,13,55,38,5,Red,"Default mode",255,0,0,R,Frontal_Pole,6,SFG,29
+103,-10,55,39,5,Red,"Default mode",255,0,0,L,Frontal_Pole,6,SFG,30
+104,-20,45,39,5,Red,"Default mode",255,0,0,L,Frontal_Pole,6,SFG,30
+105,6,54,16,5,Red,"Default mode",255,0,0,R,Paracingulate_Gyrus,12,PCG,23
+106,6,64,22,5,Red,"Default mode",255,0,0,R,Frontal_Pole,6,SFG,29
+107,-7,51,-1,5,Red,"Default mode",255,0,0,L,Paracingulate_Gyrus,12,PCG,24
+108,9,54,3,5,Red,"Default mode",255,0,0,R,Paracingulate_Gyrus,12,PCG,23
+109,-3,44,-9,5,Red,"Default mode",255,0,0,L,Paracingulate_Gyrus,12,PCG,24
+110,8,42,-5,5,Red,"Default mode",255,0,0,R,Paracingulate_Gyrus,12,PCG,23
+111,-11,45,8,5,Red,"Default mode",255,0,0,L,Cingulate_Gyrus_anterior_division,2,ACC,2
+112,-2,38,36,5,Red,"Default mode",255,0,0,L,Paracingulate_Gyrus,12,PCG,24
+113,-3,42,16,5,Red,"Default mode",255,0,0,L,Cingulate_Gyrus_anterior_division,2,ACC,2
+114,-20,64,19,5,Red,"Default mode",255,0,0,L,Frontal_Pole,6,SFG,30
+115,-8,48,23,5,Red,"Default mode",255,0,0,L,Paracingulate_Gyrus,12,PCG,24
+116,65,-12,-19,5,Red,"Default mode",255,0,0,R,Middle_Temporal_Gyrus_posterior_division,11,MTG,15
+117,-56,-13,-10,5,Red,"Default mode",255,0,0,L,Middle_Temporal_Gyrus_posterior_division,11,MTG,16
+118,-58,-30,-4,5,Red,"Default mode",255,0,0,L,Middle_Temporal_Gyrus_posterior_division,11,MTG,16
+119,65,-31,-9,5,Red,"Default mode",255,0,0,R,Middle_Temporal_Gyrus_posterior_division,11,MTG,15
+120,-68,-41,-5,5,Red,"Default mode",255,0,0,L,Middle_Temporal_Gyrus_temporooccipital_part,11,MTG,16
+121,13,30,59,5,Red,"Default mode",255,0,0,R,Superior_Frontal_Gyrus,6,SFG,29
+122,12,36,20,5,Red,"Default mode",255,0,0,R,Paracingulate_Gyrus,12,PCG,23
+123,52,-2,-16,5,Red,"Default mode",255,0,0,R,Superior_Temporal_Gyrus_anterior_division,11,MTG,15
+124,-26,-40,-8,5,Red,"Default mode",255,0,0,L,Lingual_Gyrus,9,PHG,28
+125,27,-37,-13,5,Red,"Default mode",255,0,0,R,Parahippocampal_Gyrus_posterior_division,9,PHG,27
+126,-34,-38,-16,5,Red,"Default mode",255,0,0,L,Temporal_Occipital_Fusiform_Cortex,14,FUS,6
+127,28,-77,-32,5,Red,"Default mode",255,0,0,R,no_label,0,NA,18
+128,52,7,-30,5,Red,"Default mode",255,0,0,R,Temporal_Pole,11,MTG,15
+129,-53,3,-27,5,Red,"Default mode",255,0,0,L,Middle_Temporal_Gyrus_anterior_division,11,MTG,16
+130,47,-50,29,5,Red,"Default mode",255,0,0,R,Angular_Gyrus,1,ANG,3
+131,-49,-42,1,5,Red,"Default mode",255,0,0,L,Middle_Temporal_Gyrus_temporooccipital_part,11,MTG,16
+132,-31,19,-19,-1,White,Uncertain,255,255,255,L,Frontal_Orbital_Cortex,1,OFC,12
+133,-2,-35,31,6,Gray,"Memory retrieval?",128,128,128,L,Cingulate_Gyrus_posterior_division,1,PCC,2
+134,-7,-71,42,6,Gray,"Memory retrieval?",128,128,128,L,Precuneous_Cortex,2,PCN,4
+135,11,-66,42,6,Gray,"Memory retrieval?",128,128,128,R,Precuneous_Cortex,2,PCN,3
+136,4,-48,51,6,Gray,"Memory retrieval?",128,128,128,R,Precuneous_Cortex,2,PCN,3
+137,-46,31,-13,5,Red,"Default mode",255,0,0,L,Frontal_Orbital_Cortex,5,OFC,20
+138,-10,11,67,11,Teal,"Ventral attention",0,128,128,L,Superior_Frontal_Gyrus,3,SMA,6
+139,49,35,-12,5,Red,"Default mode",255,0,0,R,Frontal_Orbital_Cortex,5,OFC,19
+140,8,-91,-7,-1,White,Uncertain,255,255,255,R,Occipital_Pole,7,Calcarine,3
+141,17,-91,-14,-1,White,Uncertain,255,255,255,R,Occipital_Fusiform_Gyrus,6,LING,9
+142,-12,-95,-13,-1,White,Uncertain,255,255,255,L,Occipital_Pole,7,Calcarine,4
+143,18,-47,-10,7,Blue,Visual,0,0,255,R,Lingual_Gyrus,5,LNG,9
+144,40,-72,14,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_inferior_division,3,iLOC,7
+145,8,-72,11,7,Blue,Visual,0,0,255,R,Intracalcarine_Cortex,2,IC,5
+146,-8,-81,7,7,Blue,Visual,0,0,255,L,Intracalcarine_Cortex,2,IC,6
+147,-28,-79,19,7,Blue,Visual,0,0,255,L,Lateral_Occipital_Cortex_superior_division,4,sLOC,14
+148,20,-66,2,7,Blue,Visual,0,0,255,R,Intracalcarine_Cortex,2,IC,5
+149,-24,-91,19,7,Blue,Visual,0,0,255,L,Occipital_Pole,7,OP,12
+150,27,-59,-9,7,Blue,Visual,0,0,255,R,Temporal_Occipital_Fusiform_Cortex,6,FUS,3
+151,-15,-72,-8,7,Blue,Visual,0,0,255,L,Lingual_Gyrus,5,LNG,10
+152,-18,-68,5,7,Blue,Visual,0,0,255,L,Intracalcarine_Cortex,2,IC,6
+153,43,-78,-12,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_inferior_division,3,iLOC,7
+154,-47,-76,-10,7,Blue,Visual,0,0,255,L,Lateral_Occipital_Cortex_inferior_division,3,iLOC,8
+155,-14,-91,31,7,Blue,Visual,0,0,255,L,Occipital_Pole,7,OP,12
+156,15,-87,37,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_superior_division,4,sLOC,13
+157,29,-77,25,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_superior_division,4,sLOC,13
+158,20,-86,-2,7,Blue,Visual,0,0,255,R,Occipital_Fusiform_Gyrus,6,FUS,3
+159,15,-77,31,7,Blue,Visual,0,0,255,R,Cuneal_Cortex,1,CN,1
+160,-16,-52,-1,7,Blue,Visual,0,0,255,L,Lingual_Gyrus,5,LNG,10
+161,42,-66,-8,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_inferior_division,3,iLOC,7
+162,24,-87,24,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_superior_division,4,sLOC,13
+163,6,-72,24,7,Blue,Visual,0,0,255,R,Cuneal_Cortex,1,CN,1
+164,-42,-74,0,7,Blue,Visual,0,0,255,L,Lateral_Occipital_Cortex_inferior_division,3,iLOC,8
+165,26,-79,-16,7,Blue,Visual,0,0,255,R,Occipital_Fusiform_Gyrus,6,FUS,3
+166,-16,-77,34,7,Blue,Visual,0,0,255,L,Cuneal_Cortex,1,CN,2
+167,-3,-81,21,7,Blue,Visual,0,0,255,L,Cuneal_Cortex,1,CN,2
+168,-40,-88,-6,7,Blue,Visual,0,0,255,L,Lateral_Occipital_Cortex_inferior_division,3,iLOC,8
+169,37,-84,13,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_superior_division,4,sLOC,13
+170,6,-81,6,7,Blue,Visual,0,0,255,R,Intracalcarine_Cortex,2,IC,5
+171,-26,-90,3,7,Blue,Visual,0,0,255,L,Occipital_Pole,7,OP,12
+172,-33,-79,-13,7,Blue,Visual,0,0,255,L,Occipital_Fusiform_Gyrus,6,FUS,4
+173,37,-81,1,7,Blue,Visual,0,0,255,R,Lateral_Occipital_Cortex_inferior_division,3,iLOC,7
+174,-44,2,46,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Precentral_Gyrus,6,PRE,12
+175,48,25,27,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Middle_Frontal_Gyrus,4,IFG,3
+176,-47,11,23,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Inferior_Frontal_Gyrus_pars_opercularis,4,IFG,4
+177,-53,-49,43,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Angular_Gyrus,1,ANG,2
+178,-23,11,64,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Superior_Frontal_Gyrus,7,SFG,14
+179,58,-53,-14,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Inferior_Temporal_Gyrus_temporooccipital_part,5,ITG,5
+180,24,45,-15,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Frontal_Pole,2,OFC,9
+181,34,54,-13,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Frontal_Pole,2,OFC,9
+182,-21,41,-20,-1,White,Uncertain,255,255,255,L,Frontal_Pole,2,OFC,12
+183,-18,-76,-24,-1,White,Uncertain,255,255,255,L,no_label,5,CERE,5
+184,17,-80,-34,-1,White,Uncertain,255,255,255,R,no_label,5,CERE,6
+185,35,-67,-34,-1,White,Uncertain,255,255,255,R,no_label,5,CERE,6
+186,47,10,33,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Middle_Frontal_Gyrus,3,MFG,7
+187,-41,6,33,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Precentral_Gyrus,6,PRE,12
+188,-42,38,21,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Frontal_Pole,3,MFG,8
+189,38,43,15,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Frontal_Pole,3,MFG,7
+190,49,-42,45,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Supramarginal_Gyrus_posterior_division,8,SMG,15
+191,-28,-58,48,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Lateral_Occipital_Cortex_superior_division,1,ANG,2
+192,44,-53,47,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Angular_Gyrus,1,ANG,1
+193,32,14,56,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Middle_Frontal_Gyrus,3,MFG,7
+194,37,-65,40,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Lateral_Occipital_Cortex_superior_division,1,ANG,1
+195,-42,-55,45,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Angular_Gyrus,1,ANG,2
+196,40,18,40,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Middle_Frontal_Gyrus,3,MFG,7
+197,-34,55,4,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Frontal_Pole,3,MFG,8
+198,-42,45,-2,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Frontal_Pole,4,IFG,4
+199,33,-53,44,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Superior_Parietal_Lobule,8,SMG,15
+200,43,49,-2,8,Yellow,"Fronto-parietal Task Control",255,255,0,R,Frontal_Pole,3,MFG,7
+201,-42,25,30,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Middle_Frontal_Gyrus,4,IFG,4
+202,-3,26,44,8,Yellow,"Fronto-parietal Task Control",255,255,0,L,Paracingulate_Gyrus,7,SFG,14
+203,11,-39,50,9,Black,Salience,0,0,0,R,Postcentral_Gyrus,6,POST,11
+204,55,-45,37,9,Black,Salience,0,0,0,R,Supramarginal_Gyrus_posterior_division,8,SMG,15
+205,42,0,47,9,Black,Salience,0,0,0,R,Precentral_Gyrus,7,PRE,13
+206,31,33,26,9,Black,Salience,0,0,0,R,Middle_Frontal_Gyrus,3,MFG,7
+207,48,22,10,9,Black,Salience,0,0,0,R,Inferior_Frontal_Gyrus_pars_triangularis,2,IFG,3
+208,-35,20,0,9,Black,Salience,0,0,0,L,Insular_Cortex,4,INS,6
+209,36,22,3,9,Black,Salience,0,0,0,R,Insular_Cortex,4,INS,5
+210,37,32,-2,9,Black,Salience,0,0,0,R,Frontal_Orbital_Cortex,2,IFG,3
+211,34,16,-8,9,Black,Salience,0,0,0,R,Insular_Cortex,4,INS,5
+212,-11,26,25,9,Black,Salience,0,0,0,L,Cingulate_Gyrus_anterior_division,1,ACC,2
+213,-1,15,44,9,Black,Salience,0,0,0,L,Paracingulate_Gyrus,5,PCG,10
+214,-28,52,21,9,Black,Salience,0,0,0,L,Frontal_Pole,3,MFG,8
+215,0,30,27,9,Black,Salience,0,0,0,R,Cingulate_Gyrus_anterior_division,1,ACC,2
+216,5,23,37,9,Black,Salience,0,0,0,R,Paracingulate_Gyrus,5,PCG,9
+217,10,22,27,9,Black,Salience,0,0,0,R,Cingulate_Gyrus_anterior_division,1,ACC,1
+218,31,56,14,9,Black,Salience,0,0,0,R,Frontal_Pole,3,MFG,7
+219,26,50,27,9,Black,Salience,0,0,0,R,Frontal_Pole,3,MFG,7
+220,-39,51,17,9,Black,Salience,0,0,0,L,Frontal_Pole,3,MFG,8
+221,2,-24,30,6,Gray,"Memory retrieval?",128,128,128,R,Cingulate_Gyrus_posterior_division,1,PCC,1
+222,6,-24,0,10,Brown,Subcortical,180,60,0,R,Thalamus,3,THAL,7
+223,-2,-13,12,10,Brown,Subcortical,180,60,0,L,Thalamus,3,THAL,8
+224,-10,-18,7,10,Brown,Subcortical,180,60,0,L,Thalamus,3,THAL,8
+225,12,-17,8,10,Brown,Subcortical,180,60,0,R,Thalamus,3,THAL,7
+226,-5,-28,-4,10,Brown,Subcortical,180,60,0,L,Brain-Stem,0,NA,1
+227,-22,7,-5,10,Brown,Subcortical,180,60,0,L,Putamen,2,PUT,6
+228,-15,4,8,10,Brown,Subcortical,180,60,0,L,Pallidum,1,PAL,4
+229,31,-14,2,10,Brown,Subcortical,180,60,0,R,Putamen,2,PUT,5
+230,23,10,1,10,Brown,Subcortical,180,60,0,R,Putamen,2,PUT,5
+231,29,1,4,10,Brown,Subcortical,180,60,0,R,Putamen,2,PUT,5
+232,-31,-11,0,10,Brown,Subcortical,180,60,0,L,Putamen,2,PUT,6
+233,15,5,7,10,Brown,Subcortical,180,60,0,R,no_label,0,NA,2
+234,9,-4,6,10,Brown,Subcortical,180,60,0,R,Thalamus,3,THAL,7
+235,54,-43,22,11,Teal,"Ventral attention",0,128,128,R,Supramarginal_Gyrus_posterior_division,4,SMG,7
+236,-56,-50,10,11,Teal,"Ventral attention",0,128,128,L,Middle_Temporal_Gyrus_temporooccipital_part,2,MTG,4
+237,-55,-40,14,11,Teal,"Ventral attention",0,128,128,L,Supramarginal_Gyrus_posterior_division,4,SMG,8
+238,52,-33,8,11,Teal,"Ventral attention",0,128,128,R,Planum_Temporale,2,MTG,3
+239,51,-29,-4,11,Teal,"Ventral attention",0,128,128,R,Middle_Temporal_Gyrus_posterior_division,2,MTG,3
+240,56,-46,11,11,Teal,"Ventral attention",0,128,128,R,Supramarginal_Gyrus_posterior_division,4,SMG,7
+241,53,33,1,11,Teal,"Ventral attention",0,128,128,R,Inferior_Frontal_Gyrus_pars_triangularis,1,IFG,1
+242,-49,25,-1,11,Teal,"Ventral attention",0,128,128,L,Inferior_Frontal_Gyrus_pars_triangularis,1,IFG,2
+243,-16,-65,-20,13,"Pale blue",Cerebellar,150,200,255,L,no_label,1,NA,1
+244,-32,-55,-25,13,"Pale blue",Cerebellar,150,200,255,L,no_label,1,NA,1
+245,22,-58,-23,13,"Pale blue",Cerebellar,150,200,255,R,no_label,1,NA,2
+246,1,-62,-18,13,"Pale blue",Cerebellar,150,200,255,R,no_label,1,NA,2
+247,33,-12,-34,-1,White,Uncertain,255,255,255,R,Parahippocampal_Gyrus_anterior_division,8,FUS,7
+248,-31,-10,-36,-1,White,Uncertain,255,255,255,L,Temporal_Fusiform_Cortex_posterior_division,8,FUS,8
+249,49,-3,-38,-1,White,Uncertain,255,255,255,R,Inferior_Temporal_Gyrus_anterior_division,3,aITG,1
+250,-50,-7,-39,-1,White,Uncertain,255,255,255,L,Inferior_Temporal_Gyrus_anterior_division,3,aITG,2
+251,10,-62,61,12,Green,"Dorsal attention",0,255,0,R,Precuneous_Cortex,4,PCN,7
+252,-52,-63,5,12,Green,"Dorsal attention",0,255,0,L,Lateral_Occipital_Cortex_inferior_division,1,MTG,6
+253,-47,-51,-21,-1,White,Uncertain,255,255,255,L,Temporal_Occipital_Fusiform_Cortex,4,pITG,14
+254,46,-47,-17,-1,White,Uncertain,255,255,255,R,Inferior_Temporal_Gyrus_temporooccipital_part,4,pITG,13
+255,47,-30,49,1,Cyan,"Sensory/somatomotor Hand",0,255,255,R,Postcentral_Gyrus,2,POST,7
+256,22,-65,48,12,Green,"Dorsal attention",0,255,0,R,Lateral_Occipital_Cortex_superior_division,2,sLOC,9
+257,46,-59,4,12,Green,"Dorsal attention",0,255,0,R,Middle_Temporal_Gyrus_temporooccipital_part,1,MTG,5
+258,25,-58,60,12,Green,"Dorsal attention",0,255,0,R,Lateral_Occipital_Cortex_superior_division,2,sLOC,9
+259,-33,-46,47,12,Green,"Dorsal attention",0,255,0,L,Superior_Parietal_Lobule,5,SPL,12
+260,-27,-71,37,12,Green,"Dorsal attention",0,255,0,L,Lateral_Occipital_Cortex_superior_division,2,sLOC,10
+261,-32,-1,54,12,Green,"Dorsal attention",0,255,0,L,Middle_Frontal_Gyrus,3,MFG,4
+262,-42,-60,-9,12,Green,"Dorsal attention",0,255,0,L,Temporal_Occipital_Fusiform_Cortex,6,ITG,2
+263,-17,-59,64,12,Green,"Dorsal attention",0,255,0,L,Lateral_Occipital_Cortex_superior_division,2,sLOC,10
+264,29,-5,54,12,Green,"Dorsal attention",0,255,0,R,Middle_Frontal_Gyrus,3,MFG,3
