@@ -3,8 +3,8 @@ function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepa
     wmmask = mc_load_datafile(filepathW);
     csfmask = mc_load_datafile(filepathC);
 
-    wmmask = reshape(wmmask,1,numel(wmmask));
-    csfmask = reshape(csfmask,1,numel(csfmask));
+    wmmask = reshape(wmmask,1,numel(wmmask))==1;
+    csfmask = reshape(csfmask,1,numel(csfmask))==1;
     
     [~,wmns] = pca(data(:,wmmask));
     [~,csfns] = pca(data(:,csfmask));
