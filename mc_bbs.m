@@ -10,6 +10,8 @@ addParameter(p,'Scores',[]);
 addParameter(p,'Components',[]);
 addParameter(p,'LOSOPheno',0);
 addParameter(p,'TestPheno',[]);
+addParameter(p,'NoComponents',0);
+addParameter(p,'Logistic',0);
 
 parse(p,varargin{:});
 
@@ -27,11 +29,16 @@ if (~isempty(p.Results.Scores))
     pcadone = 1;
     results.Aa = Aa;
 end
+results.components = [];
 if (~isempty(p.Results.Components))
     components = p.Results.Components;
     results.components = components;
 end
 LOSOPheno = p.Results.LOSOPheno;
+
+NoComponents = p.Results.NoComponents;
+
+Logistic = p.Results.Logistic;
 
 clear p;
 
@@ -52,7 +59,7 @@ good = ~any(isnan(pheno),2) & ~any(isnan(nuisance),2);
 nFold = numel(unique(folds));
 if (pcadone==0) 
 clear Aa components;
-    parfor iFold = 1:nFold
+    for iFold = 1:nFold
         tic
         fprintf(1,'.');
         %find train and test data for this fold
@@ -72,7 +79,14 @@ clear Aa components;
         toc
     end
     results.Aa = Aa;
-    results.components = components;
+    if (NoComponents==0)
+        results.components = components;
+    end
+end
+
+if (Logistic==1)
+    results = mc_bbs_logistic(featuremat,pheno,nuisance,folds,NumComp,'Scores',results.Aa,'Components',results.components,'LOSOPheno',LOSOPheno,'TestPheno',testpheno);
+    return;
 end
 
 
@@ -143,12 +157,14 @@ fold_corr = zeros(size(pheno,2),nFold);
 fold_mse = zeros(size(pheno,2),nFold);
 fold_nmse = zeros(size(pheno,2),nFold);
 fold_r2cv = zeros(size(pheno,2),nFold);
+fold_petasq = zeros(size(pheno,2),nFold);
 
 if (LOSOPheno)
     fold_corr = zeros(1,nFold);
     fold_mse = zeros(1,nFold);
     fold_nmse = zeros(1,nFold);
     fold_r2cv = zeros(1,nFold);
+    fold_petasq = zeros(1,nFold);
 end
 
 for iFold = 1:nFold
@@ -158,12 +174,19 @@ for iFold = 1:nFold
         fold_corr(:,iFold) = diag(corr(pheno_predict(test_idx,iFold),pheno_residualized(test_idx,iFold)));
         fold_mse(:,iFold) = mean((pheno_residualized(test_idx,iFold)-pheno_predict(test_idx,iFold)).^2);
         fold_nmse(:,iFold) = fold_mse(:,iFold)./mean(bsxfun(@minus,pheno_residualized(test_idx,iFold),mean(pheno_residualized(train_idx,iFold))).^2)';
-        fold_r2cv(:,iFold) = 1-fold_nmse(:,iFold);    
+        fold_r2cv(:,iFold) = 1-fold_nmse(:,iFold);
+        [~,pe] = mc_etasq(pheno_residualized(test_idx,iFold),pheno_predict(test_idx,iFold),1);
+        fold_petasq(:,iFold) = pe; 
     else
         fold_corr(:,iFold) = diag(corr(pheno_predict(test_idx,:),pheno_residualized(test_idx,:)));
         fold_mse(:,iFold) = mean((pheno_residualized(test_idx,:)-pheno_predict(test_idx,:)).^2);
         fold_nmse(:,iFold) = fold_mse(:,iFold)./mean(bsxfun(@minus,pheno_residualized(test_idx,:),mean(pheno_residualized(train_idx,:))).^2)';
         fold_r2cv(:,iFold) = 1-fold_nmse(:,iFold);
+        for iPheno = 1:size(pheno,2)
+            [~,pe] = mc_etasq(pheno_residualized(test_idx,iPheno),pheno_predict(test_idx,iPheno),1);
+            fold_petasq(iPheno,iFold) = pe;
+        end
+        
     end
 end
 
@@ -175,9 +198,12 @@ ci_corr = ts_corr.*std_corr./sqrt(nFold);
 results.fold_mse = fold_mse;
 results.fold_nmse = fold_nmse;
 results.fold_r2cv = fold_r2cv;
+results.fold_petasq = fold_petasq;
+
 results.mean_mse = mean(fold_mse,2);
 results.mean_nmse = mean(fold_nmse,2);
 results.mean_r2cv = mean(fold_r2cv,2);
+results.mean_petasq = mean(fold_petasq,2);
 
 results.pheno_predict = pheno_predict;
 results.pheno_residualized = pheno_residualized;

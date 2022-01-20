@@ -93,14 +93,22 @@ for iFold = 1:nFold
     Abig = Aa{iFold}(train_idx,1:k);
     Abig_test = Aa{iFold}(test_idx,1:k);
     %predicting phenotype
-    for iPheno = 1:size(pheno,2)
+    if (LOSOPheno)
         X = [ones(n_trainf,1) Abig nuisance(train_idx,:)];
-        b = pinv(X'*X)*X'*pheno(train_idx,iPheno);
-
-        pheno_predict(test_idx,iPheno) = Abig_test*b(2:(k+1));
-        pheno_residualized(test_idx,iPheno) = pheno(test_idx,iPheno) - [ones(n_testf,1) nuisance(test_idx,:)]*b([1 (k+2):end]);
-    end
+        b = pinv(X'*X)*X'*pheno(train_idx,iFold);
         
+        pheno_predict(test_idx,iFold) = Abig_test*b(2:(k+1));
+        pheno_residualized(test_idx,iFold) = pheno(test_idx,iFold) - [ones(n_testf,1) nuisance(test_idx,:)]*b([1 (k+2):end]);
+        
+    else
+        for iPheno = 1:size(pheno,2)
+            X = [ones(n_trainf,1) Abig nuisance(train_idx,:)];
+            b = pinv(X'*X)*X'*pheno(train_idx,iPheno);
+
+            pheno_predict(test_idx,iPheno) = Abig_test*b(2:(k+1));
+            pheno_residualized(test_idx,iPheno) = pheno(test_idx,iPheno) - [ones(n_testf,1) nuisance(test_idx,:)]*b([1 (k+2):end]);
+        end
+    end
 end
 
 %check correlation between actual and predicted phenotypes
@@ -186,13 +194,21 @@ parfor iPerm = 1:NumPerms
         shufpheno = X*b + res;
 
         %predicting phenotype
-        for iPheno = 1:size(pheno,2)
+        if (LOSOPheno)
             X = [ones(n_trainf,1) Abig nuisance(train_idx,:)];
-            b = pinv(X'*X)*X'*shufpheno(train_idx,iPheno);
+            b = pinv(X'*X)*X'*shufpheno(train_idx,iFold);
 
-            pheno_predict_perm(test_idx,iPheno) = Abig_test*b(2:(k+1));
-            pheno_residualized_perm(test_idx,iPheno) = shufpheno(test_idx,iPheno) - [ones(n_testf,1) nuisance(test_idx,:)]*b([1 (k+2):end]);
-        end     
+            pheno_predict_perm(test_idx,iFold) = Abig_test*b(2:(k+1));
+            pheno_residualized_perm(test_idx,iFold) = shufpheno(test_idx,iFold) - [ones(n_testf,1) nuisance(test_idx,:)]*b([1 (k+2):end]);    
+        else
+            for iPheno = 1:size(pheno,2)
+                X = [ones(n_trainf,1) Abig nuisance(train_idx,:)];
+                b = pinv(X'*X)*X'*shufpheno(train_idx,iPheno);
+
+                pheno_predict_perm(test_idx,iPheno) = Abig_test*b(2:(k+1));
+                pheno_residualized_perm(test_idx,iPheno) = shufpheno(test_idx,iPheno) - [ones(n_testf,1) nuisance(test_idx,:)]*b([1 (k+2):end]);
+            end   
+        end
     end
     
     tmp = zeros(P,nFold);

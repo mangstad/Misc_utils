@@ -7,6 +7,11 @@ function mc_plot_connectome(flatmat,nets,varargin)
     if (nargin>3)
         h = varargin{2};
     end
+    tri = 0;
+    if (nargin>4)
+        tri = varargin{3};
+    end
+    
     %simple plotting function to plot a sorted connectome
     [snets,sidx] = sort(nets);
     mat = mc_unflatten_upper_triangle(flatmat);
@@ -14,6 +19,10 @@ function mc_plot_connectome(flatmat,nets,varargin)
     smat = mat(sidx,sidx);
     if (isempty(h))
         h = figure;
+    end
+    
+    if (tri==1)
+        smat(tril(ones(size(smat)))==1) = 0;
     end
     imagesc(smat);
     %set(gca,'YDir','normal')
@@ -41,9 +50,18 @@ function mc_plot_connectome(flatmat,nets,varargin)
     limits = axis;
     mn = limits(1);
     mx = limits(2);
+    
     for i = 1:numel(boundaries)
         plot([mn mx],[boundaries(i) boundaries(i)],'k-');
         plot([boundaries(i) boundaries(i)],[mn mx],'k-');
+    end
+    
+    if (tri==1)
+        set(gca,'Visible','off');
+        plot([mn mx],[mn mn],'k-');
+        plot([mx mx],[mn mx],'k-');
+        patch([mn mn mx],[mn mx mx],'w','EdgeColor','none','FaceColor',[247 243 247]/255);
+        plot([mn mx],[mn mx],'k-');
     end
     hold off;
     

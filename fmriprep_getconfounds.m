@@ -1,4 +1,4 @@
-function [confounds, stats]= fmriprep_getconfounds(filepath,NPC,FDthresh,DetrendOrder,IncludeAroma,IncludeCensor,Trim)
+function [confounds, stats, fd]= fmriprep_getconfounds(filepath,NPC,FDthresh,DetrendOrder,IncludeAroma,IncludeCensor,Trim)
     [path,file,ext] = fileparts(filepath);
     %path = '/nfs/locker/dads-abcd/fmriprep/derivatives/NDARINV0D4C1R8X/sub-NDARINV0D4C1R8X/ses-baselineYear1Arm1/func/';
     %file = 'sub-NDARINV0D4C1R8X_ses-baselineYear1Arm1_task-rest_run-01_desc-confounds_regressors.tsv';
