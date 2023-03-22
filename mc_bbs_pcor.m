@@ -12,6 +12,7 @@ addParameter(p,'LOSOPheno',0);
 addParameter(p,'TestPheno',[]);
 addParameter(p,'NoComponents',0);
 addParameter(p,'Logistic',0); %currently not working
+addParameter(p,'Seed',-1);
 
 parse(p,varargin{:});
 
@@ -39,6 +40,8 @@ LOSOPheno = p.Results.LOSOPheno;
 NoComponents = p.Results.NoComponents;
 
 Logistic = p.Results.Logistic;
+
+Seed = p.Results.Seed;
 
 clear p;
 
@@ -93,6 +96,12 @@ for iFold = 1:nFold
 
     %if NumComps>1 then do nested 10-fold
     if (NumComps>1)
+        if (Seed==-1)
+            s = rng('shuffle');
+            Seed = s.Seed;
+        end
+        rng(Seed);
+        results.Seed = Seed;
         nestfold = randsample(5,n_trainf,1);
         %nestAa = [];
         %for iNest = 1:10
@@ -105,8 +114,15 @@ for iFold = 1:nFold
             nestresults(:,iNest) = tempresults.mean_corr;
         end
         [bestresults,bestcomps] = max(nestresults,[],2);
+        %calculate 1se of results over fold
+        onese = std(tempresults.fold_corr)/sqrt(numel(tempresults.fold_corr));
+        min1se = bestresults-onese;
+        oneseidx = find(nestresults>min1se);
+        onesecomps = NumComp(oneseidx(1))';
         bestcomps = NumComp(bestcomps)';
         results.bestcomps(:,iFold) = bestcomps;
+        results.onesecomps(:,iFold) = onesecomps;
+        
         Abig = Aa{iFold}(train_idx,1:max(NumComp));
         Abig_test = Aa{iFold}(test_idx,1:max(NumComp));
         %predicting phenotype
