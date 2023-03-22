@@ -30,6 +30,10 @@ for i = 1:1
                 break;
             end
             filetype = 5;
+        case '.gz'
+            [~,~,ext] = fileparts(f);
+            filetype=7;
+            break;
         otherwise
             error('Unsupported file type');
     end
@@ -55,12 +59,24 @@ switch filetype
             data = permute(data,[d 1:(d-1)]);
         end
     case 6
-        temp = ciftiopen(File,'/net/parasite/HCP/Scripts/slab/cifti/workbench/bin_linux64/wb_command');
+        [status,WBCMD] = system('which wb_command');
+        if (status ~= 0) 
+            error('wb_command not found on path');
+        end
+        temp = ciftiopen(File,strtrim(WBCMD));
         data = temp.cdata;
         s = size(data);
         d = numel(s);
         if (d==2 && s(2)>1)
             data = permute(data,[d 1:(d-1)]);
         end
+    case 7
+        %create temporary file
+        %zcat input file to temporary, then read temporary file
+        tmp = tempname;
+        [status,ZCAT] = system(['zcat ' File ' > ' tmp ext]);
+        data = mc_load_datafile([tmp ext]);
+        [status,rm] = system(['rm ' tmp ext]);
+        
 end
 
