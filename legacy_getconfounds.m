@@ -1,7 +1,22 @@
-function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepathC,TR,HPF,NPC,FDthresh,DetrendOrder,IncludeCensor,Trim)
+function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepathC,TR,HPF,NPC,FDthresh,DetrendOrder,IncludeCensor,Trim,varargin)
+
+    IncludeAROMA = 0;
+    AROMA = [];
+    if (nargin > 11) 
+        IncludeAROMA = varargin{1};
+        if (IncludeAROMA==1)
+            melodic = varargin{2};
+            ics = varargin{3};
+            
+            melodicmtx = load(melodic);
+            nuis = mc_load_datafile(ics);
+            AROMA = melodicmtx(:,nuis);
+        end
+    end
+    
     motion = load(filepathM);
-    wmmask = mc_load_datafile(filepathW);
-    csfmask = mc_load_datafile(filepathC);
+    wmmask = ceil(mc_load_datafile(filepathW));
+    csfmask = ceil(mc_load_datafile(filepathC));
 
     wmmask = reshape(wmmask,1,numel(wmmask))==1;
     csfmask = reshape(csfmask,1,numel(csfmask))==1;
@@ -36,7 +51,7 @@ function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepa
     cosine_regressors = cosine_basis(1/(2*TR),HPF,frametimes);
     
     %detrend with legendre polynomials as 3dDetrend
-    n = [1:size(dat,1)]';
+    n = [1:size(data,1)]';
     detrend = [n (1/2)*(3*n.^2-1) (1/2)*(5*n.^3 - 3*n) (1/8)*(35*n.^4 - 30*n.^2 + 3) ...
         (1/8)*(63*n.^5 - 70*n.^3 + 15*n) (1/16)*(231*n.^6 - 315*n.^4 + 105*n.^2 - 5)];
     detrend = detrend(:,1:DetrendOrder);
@@ -47,13 +62,13 @@ function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepa
     
     trimcensor = [];
     if (Trim>0)
-        trimcensor = eye(size(dat,1),Trim);
+        trimcensor = eye(size(data,1),Trim);
     end
     
-    confounds = [ones(size(dat,1),1) detrend motion_regressors compcor_regressors cosine_regressors censor trimcensor];
+    confounds = [ones(size(data,1),1) detrend motion_regressors compcor_regressors cosine_regressors censor trimcensor AROMA];
     
     %replace NaN with column nanmean
-    nm = repmat(nanmean(confounds),size(dat,1),1);
+    nm = repmat(nanmean(confounds),size(data,1),1);
     confounds(isnan(confounds)) = nm(isnan(confounds));
     stats = [sum(censor(:)) size(confounds,1) size(confounds,2) nanmean(fd)];
     

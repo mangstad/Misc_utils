@@ -108,7 +108,7 @@ for iFold = 1:nFold
         %    nestAa{iNest} = Aa{iFold}(train_idx,:);
         %end
         nestresults = zeros(size(pheno,2),NumComps);
-        firstrun = mc_bbs(featuremat(train_idx,:),pheno(train_idx,:),nuisance(train_idx,:),nestfold,1,'LOSOPheno',LOSOPheno);
+        firstrun = mc_bbs_pcor(featuremat(train_idx,:),pheno(train_idx,:),nuisance(train_idx,:),nestfold,1,'LOSOPheno',LOSOPheno);
         for iNest = 1:NumComps
             tempresults = mc_bbs_pcor(featuremat(train_idx,:),pheno(train_idx,:),nuisance(train_idx,:),nestfold,NumComp(iNest),'Scores',firstrun.Aa,'LOSOPheno',LOSOPheno);
             nestresults(:,iNest) = tempresults.mean_corr;
