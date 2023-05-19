@@ -1,4 +1,4 @@
-function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepathC,TR,HPF,NPC,FDthresh,DetrendOrder,IncludeCensor,Trim,varargin)
+function [confounds, stats, fd]= legacy_getconfounds(data,filepathM,filepathW,filepathC,TR,HPF,NPC,FDthresh,DetrendOrder,IncludeCensor,Trim,varargin)
 
     IncludeAROMA = 0;
     AROMA = [];
@@ -41,6 +41,7 @@ function [confounds, stats]= legacy_getconfounds(data,filepathM,filepathW,filepa
     fd = sum(abs(tmp),2);
     censor = fd>FDthresh;
     
+    censorvector = censor;
     y = censor;
     newy = zeros(numel(y), sum(y));
     newy(sub2ind(size(newy), find(y)',1:sum(y))) = 1;
