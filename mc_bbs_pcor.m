@@ -94,7 +94,7 @@ for iFold = 1:nFold
 
     k = NumComp;
 
-    %if NumComps>1 then do nested 10-fold
+    %if NumComps>1 then do nested 5-fold
     if (NumComps>1)
         if (Seed==-1)
             s = rng('shuffle');

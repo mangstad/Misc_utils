@@ -17,7 +17,7 @@ function [exp,b,C,v,r2] = VarExpl(Y,X,varargin)
     C=sum(Y.*Yhat,1); %% correlation
     r2 = C.^2;
     %r2 = diag(corr(X,Xhat)).^2;
-    exp = 100*sum(r2.*(v/sum(v)));
+    exp = 100*nansum(r2.*(v/sum(v)));
     
     %r = corr(X,Y);
     %r2 = r.^2;

@@ -34,12 +34,17 @@ function [confounds, stats, fd]= fmriprep_getconfounds(filepath,NPC,FDthresh,Det
     [~,i] = sort(csfv,'descend');
     csfns = csfn(i);
     
-    wmn = wmns(1:NPC);
-    csfn = csfns(1:NPC);
+    NPCw = min(NPC,numel(wmns)); %adjust number to number present if fewer than NPC
+    NPCc = min(NPC,numel(csfns));
+
+    wmn = wmns(1:NPCw);
+    csfn = csfns(1:NPCc);
     compcor_regressors = zeros(size(dat,1),NPC*2);
-    for i = 1:NPC
+    for i = 1:NPCw
         compcor_regressors(:,i) = dat.(wmn{i});
-        compcor_regressors(:,NPC+i) = dat.(csfn{i});
+    end
+    for i = 1:NPCc
+        compcor_regressors(:,NPCw+i) = dat.(csfn{i});
     end
     
     %AROMA
@@ -51,7 +56,16 @@ function [confounds, stats, fd]= fmriprep_getconfounds(filepath,NPC,FDthresh,Det
     f = fields(dat);
     %idx = ~cellfun('isempty',strfind(f,'trans_')) | ~cellfun('isempty',strfind(f,'rot_'));
     idx = contains(f,'trans_') | contains(f,'rot_');
-    motion_regressors = table2array(dat(:,idx));
+    idxoT = contains(f,'trans_') & ~contains(f,'derivative') & ~contains(f,'power2');
+    idxoR = contains(f,'rot_') & ~contains(f,'derivative') & ~contains(f,'power2');
+    idxdT = contains(f,'trans_') & contains(f,'derivative') & ~contains(f,'power2');
+    idxdR = contains(f,'rot_') & contains(f,'derivative') & ~contains(f,'power2');
+    idxqT = contains(f,'trans_') & ~contains(f,'derivative') & contains(f,'power2');
+    idxqR = contains(f,'rot_') & ~contains(f,'derivative') & contains(f,'power2');
+    idxqdT = contains(f,'trans_') & contains(f,'derivative') & contains(f,'power2');
+    idxqdR = contains(f,'rot_') & contains(f,'derivative') & contains(f,'power2');
+    
+    motion_regressors = table2array([dat(:,idxoT) dat(:,idxoR) dat(:,idxdT) dat(:,idxdR) dat(:,idxqT) dat(:,idxqR) dat(:,idxqdT) dat(:,idxqdR)]);
     
     fd = dat.framewise_displacement;
     censor = fd>FDthresh;

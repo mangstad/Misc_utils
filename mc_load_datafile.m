@@ -34,6 +34,8 @@ for i = 1:1
             [~,~,ext] = fileparts(f);
             filetype=7;
             break;
+        case '.gii'
+            filetype=8;
         otherwise
             error('Unsupported file type');
     end
@@ -77,6 +79,13 @@ switch filetype
         [status,ZCAT] = system(['zcat ' File ' > ' tmp ext]);
         data = mc_load_datafile([tmp ext]);
         [status,rm] = system(['rm ' tmp ext]);
-        
+    case 8
+        temp = gifti(File);
+        data = temp.cdata;
+        s = size(data);
+        d = numel(s);
+        if (d==2 && s(2)>1)
+            data = permute(data,[d 1:(d-1)]);
+        end
 end
 
