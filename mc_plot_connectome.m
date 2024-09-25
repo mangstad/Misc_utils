@@ -12,6 +12,11 @@ function mc_plot_connectome(flatmat,nets,varargin)
         tri = varargin{3};
     end
     
+    labels = [];
+    if (nargin>5)
+        labels = varargin{4};
+    end
+    
     %simple plotting function to plot a sorted connectome
     [snets,sidx] = sort(nets);
     mat = mc_unflatten_upper_triangle(flatmat);
@@ -63,5 +68,17 @@ function mc_plot_connectome(flatmat,nets,varargin)
         patch([mn mn mx],[mn mx mx],'w','EdgeColor','none','FaceColor',[247 243 247]/255);
         plot([mn mx],[mn mx],'k-');
     end
+    
+    if (~isempty(labels)) 
+        %calculate center plot points based on nets
+        xticks([0;boundaries] + diff([0;boundaries;numel(nets)])/2);
+        xticklabels(labels);
+        set(gca,'XAxisLocation','top','box','off');
+        set(gca,'Visible','on');
+        xtickangle(45);
+        set(gca,'YTick',[]);
+        set(gca,'YAxisLocation','right','box','off');
+    end
+    
     hold off;
     
