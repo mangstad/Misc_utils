@@ -12,6 +12,7 @@ Title = 'Title';
 cmap = [];
 edge = [0.5 0.5 0.5];
 alpha = repmat(1,numel(x),1);
+trend = 1;
 
 p = inputParser;
 
@@ -23,6 +24,7 @@ addParameter(p,'Title',[]);
 addParameter(p,'cmap',[]);
 addParameter(p,'MarkerEdgeColor',[]);
 addParameter(p,'AlphaData',[]);
+addParameter(p,'trend',[]);
 
 parse(p,varargin{:});
 
@@ -49,10 +51,16 @@ if (~isempty(p.Results.MarkerEdgeColor))
 end
 if (~isempty(p.Results.AlphaData))
     alpha = p.Results.AlphaData;
+    if (numel(alpha)==1)
+        alpha = repmat(p.Results.AlphaData,numel(x),1);
+    end
+end
+if (~isempty(p.Results.trend))
+    trend = p.Results.trend;
 end
 
 h = figure;
-scatter(x,y,size,color,'filled','MarkerEdgeColor',edge,'LineWidth',0.25,'MarkerFaceAlpha','flat','AlphaData',alpha);
+scatter(x,y,size,color,'filled','MarkerEdgeColor',edge,'LineWidth',0.25,'MarkerFaceAlpha','flat','AlphaData',alpha,'AlphaDataMapping','none');
 
 if (~isempty(cmap))
     %[cmap,labels] = mc_cmap_gordon();
@@ -61,9 +69,14 @@ if (~isempty(cmap))
 end
 
 hold on;
+axis image;
 h = refline(0,0);
 h.Color = 'red';
 h.LineWidth = 2;
+h = line([0 0],ylim);
+h.Color='red';
+h.LineWidth = 2;
+
 title(Title,'FontSize',30,'FontWeight','bold');
 xlabel(Xlabel,'FontSize',24,'FontWeight','bold');
 ylabel(Ylabel,'FontSize',24,'FontWeight','bold');
@@ -72,7 +85,10 @@ p = polyval(fit,x);
 imin = find(x==nanmin(x));
 imax = find(x==nanmax(x));
 
-plot([nanmin(x) nanmax(x)],[p(imin(1)) p(imax(1))],'k--','LineWidth',2);
+if (trend)
+    plot([nanmin(x) nanmax(x)],[p(imin(1)) p(imax(1))],'k--','LineWidth',2);
+end
+
 set(gcf,'color','w');
 set(gcf,'position',[10 10 1024 576]);
 
